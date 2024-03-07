@@ -4,6 +4,9 @@ package es.unican.is2.FranquiciasUCDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import es.unican.is2.FranquiciasUCCommon.DataAccessException;
+import es.unican.is2.FranquiciasUCCommon.Tienda;
+
 /**
  * Clase de utilidad que mapea filas de la base de datos a objetos 
  * de tipo Tienda.

@@ -8,6 +8,10 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import es.unican.is2.FranquiciasUCCommon.DataAccessException;
+import es.unican.is2.FranquiciasUCCommon.ITiendasDAO;
+import es.unican.is2.FranquiciasUCCommon.Tienda;
+
 /**
  * Implementacion de la capa DAO de acceso a Tiendas. 
  * Utiliza almacenamiento en base de datos H2 en memoria.

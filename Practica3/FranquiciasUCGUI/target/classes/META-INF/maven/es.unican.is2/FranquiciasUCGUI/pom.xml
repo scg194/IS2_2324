@@ -4,4 +4,12 @@
   <artifactId>FranquiciasUCGUI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>FranquiciasUCGUI</name>
+  
+   <dependencies>
+	  <dependency>
+	        <groupId>es.unican.is2</groupId>
+	        <artifactId>FranquiciasUCCommon</artifactId>
+	        <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	</dependencies>
 </project>

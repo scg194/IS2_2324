@@ -15,6 +15,13 @@ import java.awt.event.ActionEvent;
 import javax.swing.JList;
 
 import javax.swing.border.LineBorder;
+
+import es.unican.is2.FranquiciasUCCommon.DataAccessException;
+import es.unican.is2.FranquiciasUCCommon.Empleado;
+import es.unican.is2.FranquiciasUCCommon.IGestionEmpleados;
+import es.unican.is2.FranquiciasUCCommon.IGestionTiendas;
+import es.unican.is2.FranquiciasUCCommon.Tienda;
+
 import java.awt.Color;
 import javax.swing.JButton;
 

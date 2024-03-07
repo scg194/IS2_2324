@@ -6,6 +6,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import es.unican.is2.FranquiciasUCCommon.DataAccessException;
+
 
 /**
  * Clase que gestiona el acceso a la base de datos H2 en memoria.

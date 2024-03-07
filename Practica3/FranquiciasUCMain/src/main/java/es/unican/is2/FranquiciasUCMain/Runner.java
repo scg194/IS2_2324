@@ -1,5 +1,10 @@
 package es.unican.is2.FranquiciasUCMain;
 
+import es.unican.is2.FranquiciaUCBusiness.GestionEmpleados;
+import es.unican.is2.FranquiciaUCBusiness.GestionTiendas;
+import es.unican.is2.FranquiciasUCDAO.EmpleadosDAO;
+import es.unican.is2.FranquiciasUCDAO.TiendasDAO;
+import es.unican.is2.FranquiciasUCGUI.VistaGerente;
 
 /**
  * Clase principal que construye la aplicaci�n de tres capas y lanza su ejecuci�n
@@ -20,9 +25,6 @@ public class Runner {
 		
 		// Lanzar ejecuci�n (hacer visible la interfaz)
 		vista.setVisible(true);
-		
-	
-		
 	}
 
 }
