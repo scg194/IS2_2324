@@ -11,6 +11,11 @@ public class GestionEmpleados implements IGestionEmpleados{
 	
 	private IEmpleadosDAO empleadosDAO;
 	private ITiendasDAO tiendasDAO;
+	
+	public GestionEmpleados(ITiendasDAO tiendasDAO, IEmpleadosDAO empleadosDAO) {
+		this.empleadosDAO = empleadosDAO;
+		this.tiendasDAO = tiendasDAO;
+	}
 
 	@Override
 	public Empleado nuevoEmpleado(Empleado e, String nombre) throws OperacionNoValidaException, DataAccessException {
@@ -18,6 +23,10 @@ public class GestionEmpleados implements IGestionEmpleados{
 		
 		if (t == null || e == null) {
 			return null;
+		}
+		
+		if (t.buscaEmpleado(nombre) != null) {
+			throw new OperacionNoValidaException("El empleado ya existe");
 		}
 		
 		t.getEmpleados().add(e);
@@ -35,6 +44,10 @@ public class GestionEmpleados implements IGestionEmpleados{
 			return null;
 		}
 		
+		if (t.buscaEmpleado(dni) == null) {
+			throw new OperacionNoValidaException("El empleado existe pero no pertenece a la tienda");
+		}
+		
 		t.getEmpleados().remove(e);
 		tiendasDAO.modificarTienda(t);
 		
@@ -49,8 +62,12 @@ public class GestionEmpleados implements IGestionEmpleados{
 		Tienda tD = tiendasDAO.tiendaPorNombre(destino);
 		Empleado e = empleadosDAO.empleado(dni);
 		
-		if (tA == null || tD == null || e == null || tA.buscaEmpleado(e.getDNI()) != null) {
+		if (tA == null || tD == null || e == null) {
 			return false;
+		}
+		
+		if (tA.buscaEmpleado(e.getDNI()) == null) {
+			throw new OperacionNoValidaException("El empleado existe pero no pertenece a la tienda");
 		}
 		
 		tA.getEmpleados().remove(e);

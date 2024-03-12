@@ -8,6 +8,10 @@ import es.unican.is2.FranquiciasUCCommon.OperacionNoValidaException;
 public class GestionTiendas implements IGestionTiendas{
 	
 	private ITiendasDAO tiendasDAO;
+	
+	public GestionTiendas(ITiendasDAO tiendasDAO){
+		this.tiendasDAO = tiendasDAO;
+	}
 
 	@Override
 	public Tienda nuevaTienda(Tienda t) throws DataAccessException {
@@ -25,6 +29,10 @@ public class GestionTiendas implements IGestionTiendas{
 		
 		if (tienda == null) {
 			return null;
+		}
+		
+		if (!tienda.getEmpleados().isEmpty()) {
+			throw new DataAccessException();
 		}
 		
 		long id = tienda.getId();

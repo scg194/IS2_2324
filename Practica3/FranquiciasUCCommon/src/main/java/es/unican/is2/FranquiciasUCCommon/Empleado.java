@@ -3,6 +3,7 @@ package es.unican.is2.FranquiciasUCCommon;
 
 
 import java.time.LocalDate;
+import java.time.Period;
 /**
  * Clase que representa un empleado de la franquicia, 
  * con sus datos personales 
@@ -37,8 +38,40 @@ public class Empleado {
 	 * Retorna el sueldo bruto del empleado
 	 */
 	public double sueldoBruto() {
-		// TODO
-		return 0;
+		double sueldo = 0;
+		
+		if (categoria == Categoria.ENCARGADO) {
+			sueldo = 2000;
+		}
+		
+		if (categoria == Categoria.VENDEDOR) {
+			sueldo = 1500;
+		}
+		
+		if (categoria == Categoria.AUXILIAR) {
+			sueldo = 1000;
+		}
+		
+		int antiguedad = Period.between(fechaContratacion, LocalDate.now()).getYears();
+		
+		if (antiguedad > 5) {
+			sueldo = sueldo + 50;
+		}
+		
+		if (antiguedad > 10) {
+			sueldo = sueldo + 100;
+		}
+		
+		if (antiguedad > 20) {
+			sueldo = sueldo + 200;
+		}
+		
+		if (baja) {
+			sueldo = sueldo * 0.75;
+		}
+		
+		
+		return sueldo;
 	}
 	
 	/** 
