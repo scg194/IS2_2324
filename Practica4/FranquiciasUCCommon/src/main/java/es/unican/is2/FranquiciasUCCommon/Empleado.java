@@ -54,18 +54,14 @@ public class Empleado {
 		
 		int antiguedad = Period.between(fechaContratacion, LocalDate.now()).getYears();
 		
-		if (antiguedad > 5) {
-			sueldo = sueldo + 50;
-		}
-		
-		if (antiguedad > 10) {
-			sueldo = sueldo + 100;
-		}
-		
 		if (antiguedad > 20) {
 			sueldo = sueldo + 200;
+		} else if(antiguedad > 10) {
+			sueldo = sueldo + 100;
+		} else if(antiguedad > 5) {
+			sueldo = sueldo + 50;
 		}
-		
+
 		if (baja) {
 			sueldo = sueldo * 0.75;
 		}
