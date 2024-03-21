@@ -141,6 +141,5 @@ public class VistaGerente extends JFrame {
 			listModel.removeAllElements();
 			e.printStackTrace();
 		}
-
 	}
 }
