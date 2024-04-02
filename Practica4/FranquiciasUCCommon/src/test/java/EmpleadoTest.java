@@ -22,7 +22,6 @@ public class EmpleadoTest {
 	
 	@Test
 	public void testSueldo() {
-		//casos validos
 		
 		//0-5 años
 		empleado.setCategoria(Categoria.ENCARGADO);
@@ -83,7 +82,6 @@ public class EmpleadoTest {
 		empleado.setBaja(false);
 		assertEquals(2200, empleado.sueldoBruto());
 		
-		//casos no validos
 	}
 	
 	@Test

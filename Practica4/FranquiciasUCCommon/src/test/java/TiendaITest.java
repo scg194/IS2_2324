@@ -24,13 +24,12 @@ public class TiendaITest {
 		assertEquals("torrelavega", tienda.getDireccion());
 	}
 	
-	@Test
+	@Test 
 	public void testSueldos() {
 		Empleado empleado1 = new Empleado("72199353F", "samuel", Categoria.ENCARGADO, LocalDate.of(2024, 3, 14));
 		Empleado empleado2 = new Empleado("72199353F", "paco", Categoria.VENDEDOR, LocalDate.of(2024, 3, 14));
 		Empleado empleado3 = new Empleado("72199353F", "luis", Categoria.AUXILIAR, LocalDate.of(2024, 3, 14));
 		
-		//casos no validos
 		//sin empleados
 		assertEquals(0, tienda.gastoMensualSueldos());
 		
